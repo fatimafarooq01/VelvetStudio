@@ -1,16 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Button = ({ text, variant }) => {
+const Button = ({ text, variant, to = "#" }) => {
   return (
-    <button
+    <Link
+      to={to}
       className={
         variant === "filled"
-          ? "bg-yellow-600 text-white px-6 py-3 rounded-lg hover:bg-yellow-700 transition"
-          : "border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-lg hover:bg-yellow-600 hover:text-white transition"
+          ? "inline-block bg-yellow-600 text-white px-6 py-3 rounded-lg hover:bg-yellow-700 transition"
+          : "inline-block border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-lg hover:bg-yellow-600 hover:text-white transition"
       }
     >
       {text}
-    </button>
+    </Link>
   );
 };
 

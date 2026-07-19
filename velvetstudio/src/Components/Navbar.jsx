@@ -13,17 +13,17 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Gallery", path: "/gallery" },
-    { name: "Contact", path: "/contact" },
+    // { name: "Contact", path: "/appointment" },
   ];
 
-const services = [
-  { name: "Hair Styling", path: "/services#hair" },
-  { name: "Hair Coloring", path: "/services#hair-color" },
-  { name: "Bridal Makeup", path: "/services#bridal" },
-  { name: "Skin Care", path: "/services#skin" },
-  { name: "Spa Therapy", path: "/services#spa" },
-  { name: "Nail Care", path: "/services#nails" },
-];
+  const services = [
+    { name: "Hair Styling", path: "/services#hair" },
+    { name: "Hair Coloring", path: "/services#hair-color" },
+    { name: "Bridal Makeup", path: "/services#bridal" },
+    { name: "Skin Care", path: "/services#skin" },
+    { name: "Spa Therapy", path: "/services#spa" },
+    // { name: "Nail Care", path: "/services#nails" },
+  ];
 
   return (
     <nav className="sticky top-0 z-50">
@@ -87,37 +87,26 @@ const services = [
               >
                 {item.name}
 
-                <span
-                  className="
-                  absolute
-                  left-0
-                  -bottom-2
-                  w-0
-                  h-0.5
-                  bg-yellow-600
-                  group-hover:w-full
-                  duration-300
-                  "
-                />
+                <span className="absolute left-0 -bottom-2 w-0 h-0.5 bg-yellow-600 group-hover:w-full duration-300 "/>
               </Link>
             ))}
 
             {/* Services Dropdown */}
 
-        <div className="relative group">
+            <div className="relative group">
 
-  {/* Services Button */}
-  <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-yellow-600 transition">
+              {/* Services Button */}
+              <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-yellow-600 transition">
 
-    Services
+                Services
 
-    <FiChevronDown className="transition-transform duration-300 group-hover:rotate-180" />
+                <FiChevronDown className="transition-transform duration-300 group-hover:rotate-180" />
 
-  </button>
+              </button>
 
-  {/* Dropdown */}
-  <div
-    className="
+              {/* Dropdown */}
+              <div
+                className="
       absolute
       top-full
       left-1/2
@@ -131,15 +120,15 @@ const services = [
       duration-300
       z-50
     "
-  >
+              >
 
-    <div className="w-72 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+                <div className="w-72 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
 
-      {services.map((service) => (
-        <Link
-          key={service.name}
-          to={service.path}
-          className="
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      to={service.path}
+                      className="
             block
             px-6
             py-4
@@ -148,17 +137,17 @@ const services = [
             hover:text-yellow-600
             transition
           "
-        >
-          {service.name}
-        </Link>
-      ))}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
 
-    </div>
+                </div>
 
-  </div>
+              </div>
 
-</div>
-                        {/* Remaining Links */}
+            </div>
+            {/* Remaining Links */}
 
             {menuItems.slice(2).map((item) => (
               <Link
@@ -185,23 +174,22 @@ const services = [
 
           </div>
 
-          {/* Book Now */}
-
-          <button
+          <Link
+            to="/appointment"
             className="
-            hidden
-            md:block
-            bg-yellow-600
-            text-white
-            px-7
-            py-3
-            rounded-full
-            hover:bg-black
-            duration-300
-            "
+  hidden
+  md:block
+  bg-yellow-600
+  text-white
+  px-7
+  py-3
+  rounded-full
+  hover:bg-black
+  duration-300
+"
           >
             Book Now
-          </button>
+          </Link>
 
           {/* Empty Space (Mobile) */}
 
@@ -264,9 +252,8 @@ const services = [
                 Services
 
                 <FiChevronDown
-                  className={`duration-300 ${
-                    isServicesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`duration-300 ${isServicesOpen ? "rotate-180" : ""
+                    }`}
                 />
 
               </button>
@@ -309,28 +296,20 @@ const services = [
               Gallery
             </Link>
 
-            <Link
+            {/* <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="py-3 text-lg hover:text-yellow-600 transition"
             >
               Contact
-            </Link>
+            </Link> */}
 
-            <button
-              className="
-              mt-6
-              bg-yellow-600
-              text-white
-              px-8
-              py-3
-              rounded-full
-              hover:bg-black
-              duration-300
-              "
-            >
+            <Link
+              to="/appointment"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-6 bg-yellow-600 text-white px-8 py-3 rounded-full hover:bg-black duration-300">
               Book Now
-            </button>
+            </Link>
 
           </div>
 

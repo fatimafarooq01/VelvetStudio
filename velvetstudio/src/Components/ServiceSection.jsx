@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const ServiceSection = ({
   title,
@@ -71,22 +72,11 @@ const ServiceSection = ({
               </h3>
             </div>
 
-            <button
-              className="
-      hidden md:block
-      border
-      border-yellow-600
-      text-yellow-600
-      px-8
-      py-3
-      rounded-full
-      hover:bg-yellow-600
-      hover:text-white
-      duration-300
-      "
-            >
-              Book Appointment
-            </button>
+            <Button
+              text="Book Appointment"
+              variant="filled"
+              to="/appointment"
+            />
 
           </div>
 

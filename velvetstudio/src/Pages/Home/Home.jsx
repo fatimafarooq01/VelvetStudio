@@ -14,10 +14,12 @@ import Gallery5 from "../../assets/Gallery5.jpg";
 import Gallery6 from "../../assets/Gallery6.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
 const Home = () => {
+  const navigate = useNavigate();
   const testimonials = [
     {
       name: "Sophia Carter",
@@ -90,11 +92,13 @@ const Home = () => {
             <Button
               text="Book Appointment"
               variant="filled"
+              to="/appointment"
             />
 
             <Button
               text="Our Services"
               variant="outline"
+              to="/services"
             />
           </div>
 
@@ -149,7 +153,10 @@ const Home = () => {
                   perfectly for your personality.
                 </p>
 
-                <button className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300">
+                <button
+                  onClick={() => navigate("/services#hair")}
+                  className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300"
+                >
                   Discover →
                 </button>
 
@@ -174,7 +181,10 @@ const Home = () => {
                   Bridal Makeup
                 </h3>
 
-                <button className="mt-4 text-yellow-400">
+                <button
+                  onClick={() => navigate("/services#bridal")}
+                  className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300"
+                >
                   Discover →
                 </button>
 
@@ -199,7 +209,10 @@ const Home = () => {
                   Skin Care
                 </h3>
 
-                <button className="mt-4 text-yellow-400">
+                <button
+                  onClick={() => navigate("/services#skin")}
+                  className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300"
+                >
                   Discover →
                 </button>
 
@@ -229,7 +242,10 @@ const Home = () => {
                   for vibrant, healthy and long-lasting beauty.
                 </p>
 
-                <button className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300">
+                <button
+                  onClick={() => navigate("/services#hair-color")}
+                  className="mt-6 border-b border-yellow-500 text-yellow-400 hover:tracking-widest duration-300"
+                >
                   Discover →
                 </button>
 
@@ -598,15 +614,16 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row lg:justify-end gap-5">
 
                 <Button
-                  text="Book Appointment"
-                  variant="filled"
-                />
+              text="Book Appointment"
+              variant="filled"
+              to="/appointment"
+            />
 
-                <Button
-                  text="Our Services"
-                  variant="outline"
-                />
-
+            <Button
+              text="Our Services"
+              variant="outline"
+              to="/services"
+            />
               </div>
 
             </div>
